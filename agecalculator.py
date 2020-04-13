@@ -7,13 +7,16 @@ WIDTH = 600
 
 def calcage():
     today = datetime.date.today()
-    bornday = datetime.date(int(insyear.get()), int(insmonth.get()), int(insday.get()))
-    birthday = datetime.date(today.year, bornday.month, bornday.day)
-    if birthday < today:
-        yourage = today.year - bornday.year
-    else:
-        yourage = today.year - bornday.year - 1
-    msg = '%s is %s years old!' % (str(insname.get()), yourage)
+    try:
+        bornday = datetime.date(int(insyear.get()), int(insmonth.get()), int(insday.get()))
+        birthday = datetime.date(today.year, bornday.month, bornday.day)
+        if birthday < today:
+            yourage = today.year - bornday.year
+        else:
+            yourage = today.year - bornday.year - 1
+        msg = '%s is %s years old!' % (str(insname.get()), yourage)
+    except:
+        msg = 'Invalid input'
     label['text'] = msg
 
 root = tk.Tk()
