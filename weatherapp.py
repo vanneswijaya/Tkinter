@@ -1,8 +1,6 @@
 import tkinter as tk
 from tkinter import font
 import requests
-import sys
-import os
 
 HEIGHT = 500
 WIDTH = 600
@@ -39,10 +37,7 @@ root = tk.Tk()
 canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
 
-if getattr(sys, 'frozen', False):
-    background_image = tk.PhotoImage(file=os.path.join(sys._MEIPASS, 'landscape.png'))
-else:
-    background_image = tk.PhotoImage(file='landscape.png')
+background_image = tk.PhotoImage(file='landscape.png')
 background_label = tk.Label(root, image=background_image)
 background_label.place(relwidth=1, relheight=1)
 
