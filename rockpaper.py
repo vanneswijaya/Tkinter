@@ -15,7 +15,7 @@ def choicetonum(choice):
     return rps.get(choice)
 
 def comprand():
-    return random.choice(['rock','paper','choice'])
+    return random.choice(['rock','paper','scissor'])
 
 def result(humchoice, comchoice):
     global userscore
